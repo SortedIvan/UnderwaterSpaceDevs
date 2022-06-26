@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m_sand 1
+  m_Shader: {fileID: 4800000, guid: 206fed09abe03dc4fb14c6d9d652052e, type: 3}
+  m_ShaderKeywords: _GENERATE_NORMALS_MAP _PARTITIONING_INTEGER _TESSELLATION_FACTOR_WORLD
+    _TESSELLATION_SMOOTHING_FLAT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: ea4133b3fd0d9da4f901eaf290cfad19, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexture:
+        m_Texture: {fileID: 2800000, guid: ad93393a8f3f0ad41b1f7a0a2aade238, type: 3}
+        m_Scale: {x: 28, y: 28}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 8d795a378bfc2e8488a0f0e4c03d07a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BackFaceCullTolerance: 0.1
+    - _FrustumCullTolerance: 0.95
+    - _GENERATE_NORMALS: 0
+    - _HeightMapAltitude: 1
+    - _NormalStrength: 1
+    - _PARTITIONING: 0
+    - _Smoothness: 0.03
+    - _TESSELLATION_FACTOR: 1
+    - _TESSELLATION_SMOOTHING: 0
+    - _TessellationBias: 1.4
+    - _TessellationFactor: 0.3
+    - _TessellationFactorVColors: 0
+    - _TessellationSmoothing: 0.7
+    - _TessellationSmoothingVColors: 0
+    m_Colors: []
+  m_BuildTextureStacks: []

@@ -39,7 +39,7 @@ Material:
     - _HeightMapAltitude: 0.7
     - _NormalStrength: 1
     - _PARTITIONING: 0
-    - _Smoothness: 0.15
+    - _Smoothness: 0.03
     - _TESSELLATION_FACTOR: 1
     - _TESSELLATION_SMOOTHING: 0
     - _TessellationBias: 1.4
