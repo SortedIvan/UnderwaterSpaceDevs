@@ -6,11 +6,11 @@ public class PlayerMovementScript : MonoBehaviour
 
     [Header("Player Attributes")]
     [SerializeField] public Rigidbody rb;
-    [SerializeField] public CharacterController cc;
 
     [Header("Player movement variables")]
-    [SerializeField] public float move_speed = 10f;
+    [SerializeField] public float move_speed = 7f;
     [SerializeField] public float movement_multiplier = 10f;
+    public Transform orientation;
     private float verticalInput;
     private float horizontalInput;
     private Vector3 moveDirection;
@@ -19,16 +19,12 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] public float distToGround = 2f;
     [SerializeField] public LayerMask groundLayer;
     [SerializeField] public bool isOnGround;
-    [SerializeField] public float playerGroundDrag = 6f;
+    [SerializeField] public float playerGroundDrag = 17f;
     private bool player_is_moving = false;
     RaycastHit hit;
 
     private GroundSoundsController soundsController;
 
-
-    public AudioClip clip;
-    public AudioSource source;
-    
 
     void Start()
     {
@@ -40,64 +36,59 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-		{
-            source.PlayOneShot(clip);
-		}
         CheckIsOnGround();
         GetPlayerInput();
-        ApplyDrag();
         CheckIsMoving();
 
-        if (rb.velocity.magnitude > 2f && !source.isPlaying)
-		{
-            source.volume = Random.Range(0.8f, 1);
-            source.pitch = Random.Range(0.8f, 1);
-            source.Play();
-        } else if (rb.velocity.magnitude < 2f && source.isPlaying)
-		{
-            source.Stop();
-		}
-
-        //if (Physics.Raycast(CheckIfOnMetal(), out RaycastHit hit, distToGround))
-        //{
-        //    if (hit.collider.tag == "Metal")
-        //    {
-        //        PlaySounds();
-        //    }
-        //}
+        SpeedControl();
+        if (isOnGround)
+        {
+            ApplyGroundDrag(true);
+        }
+        else
+        {
+            ApplyGroundDrag(false);
+        }
+        
+        CheckIsMoving();
     }
 
     void FixedUpdate()
     {
         if (isOnGround)
         {
-            MovePlayer();
+           MovePlayer();
         }
-        
     }
 
     private void GetPlayerInput()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
     }
 
-    private void ApplyDrag()
+    private void ApplyGroundDrag(bool isGrounded)
     {
-        rb.drag = playerGroundDrag;
+        if (isGrounded)
+        {
+            rb.drag = playerGroundDrag;
+        }
+        else
+        {
+            rb.drag = 0f;
+        }
     }
 
     private void MovePlayer()
     {
         // Normalized makes it so that it isn't bad on diagonals
-        rb.AddForce(moveDirection.normalized * move_speed * movement_multiplier, ForceMode.Acceleration); 
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        rb.AddForce(moveDirection.normalized * move_speed * movement_multiplier, ForceMode.Force); 
     }
 
     private void CheckIsOnGround()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.1f, groundLayer))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, distToGround + 0.5f, groundLayer))
         {
             isOnGround = true;
         }
@@ -107,34 +98,24 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    private Ray CheckIfOnMetal()
-    {
-        return new Ray(transform.position, transform.TransformDirection(Vector3.down * distToGround));
-    }
-
     private void CheckIsMoving()
     {
-        if (horizontalInput != 0f || verticalInput != 0f)
+        if (horizontalInput > 0f || horizontalInput < 0f || verticalInput > 0f || verticalInput < 0f)
         {
             player_is_moving = true;
         }
         else player_is_moving = false;
     }
 
-    private void OnDrawGizmos()
+    private void SpeedControl()
     {
-        Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(Vector3.down) * 5;
-        Gizmos.DrawRay(transform.position, direction);
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if(flatVel.magnitude > move_speed)
+        {
+            Vector3 limitedVel = flatVel.normalized * move_speed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 
-    public void PlaySounds()
-    {
-            if (player_is_moving)
-            {
-            Debug.Log("SOUND SHOULD BE PLAYING NOW");
-                soundsController.PlayMetalWalkingSound(true);
-            }
-            else soundsController.PlayMetalWalkingSound(false);
-    }
 }
