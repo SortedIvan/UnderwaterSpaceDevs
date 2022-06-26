@@ -212,6 +212,8 @@ MonoBehaviour:
     m_Bits: 64
   isOnGround: 0
   playerGroundDrag: 6
+  clip: {fileID: 8300000, guid: 187a94b8ed008bf4f8944e3b1afa783f, type: 3}
+  source: {fileID: 107779214}
 --- !u!114 &107779213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 187a94b8ed008bf4f8944e3b1afa783f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.314
   m_Pitch: 1
   Loop: 0
@@ -312,7 +314,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.55
+      value: 0.595
       inSlope: 0
       outSlope: 0
       tangentMode: 0

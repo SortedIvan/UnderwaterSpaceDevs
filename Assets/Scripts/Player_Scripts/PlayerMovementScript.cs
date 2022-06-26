@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -39,18 +40,32 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+		{
+            source.PlayOneShot(clip);
+		}
         CheckIsOnGround();
         GetPlayerInput();
         ApplyDrag();
         CheckIsMoving();
 
-        if (Physics.Raycast(CheckIfOnMetal(), out RaycastHit hit, distToGround))
-        {
-            if (hit.collider.tag == "Metal")
-            {
-                PlaySounds();
-            }
-        }
+        if (rb.velocity.magnitude > 2f && !source.isPlaying)
+		{
+            source.volume = Random.Range(0.8f, 1);
+            source.pitch = Random.Range(0.8f, 1);
+            source.Play();
+        } else if (rb.velocity.magnitude < 2f && source.isPlaying)
+		{
+            source.Stop();
+		}
+
+        //if (Physics.Raycast(CheckIfOnMetal(), out RaycastHit hit, distToGround))
+        //{
+        //    if (hit.collider.tag == "Metal")
+        //    {
+        //        PlaySounds();
+        //    }
+        //}
     }
 
     void FixedUpdate()
@@ -99,7 +114,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void CheckIsMoving()
     {
-        if (horizontalInput > 0f)
+        if (horizontalInput != 0f || verticalInput != 0f)
         {
             player_is_moving = true;
         }
