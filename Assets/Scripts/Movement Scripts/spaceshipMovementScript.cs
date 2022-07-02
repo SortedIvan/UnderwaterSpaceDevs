@@ -35,11 +35,16 @@ public class spaceshipMovementScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log(GetHeadingAngle());
-            //this.isMoving = true;
+           
+
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            this.isMoving = true;
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            //this.isMoving = false;
+            this.isMoving = false;
         }
 
         if (isMoving)
