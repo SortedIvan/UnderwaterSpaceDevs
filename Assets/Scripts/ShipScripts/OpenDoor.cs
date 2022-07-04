@@ -7,8 +7,6 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] public GameObject door;
     private bool PlayerCanOpenThisDoor = false;
     private Vector3 originalDoorPosition;
-    private spaceshipMovementScript spaceshipScript;
-
     private void Awake()
     {
         this.originalDoorPosition = door.transform.position;
@@ -16,27 +14,24 @@ public class OpenDoor : MonoBehaviour
 
     void Start()
     {
-        door = GetComponent<GameObject>();
-        this.spaceshipScript = GetComponent<spaceshipMovementScript>();
+        
     }
 
     void Update()
     {
-        if (!spaceshipScript.isMoving)
-        {
             if (Input.GetKeyDown(KeyCode.E) && PlayerCanOpenThisDoor)
             {
                 door.transform.position = new Vector3(originalDoorPosition.x, 
                     originalDoorPosition.y, originalDoorPosition.z + 0.5f);
             }
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            this.originalDoorPosition = door.transform.position;
+            //this.originalDoorPosition = door.transform.position;
             PlayerCanOpenThisDoor = true;
             Debug.Log("Player can open the door");
         }
