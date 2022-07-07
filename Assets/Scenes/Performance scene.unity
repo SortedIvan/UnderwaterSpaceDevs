@@ -134,6 +134,62 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8299486166014289269, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166258705886, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166264104717, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166644106199, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166816686490, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166816686490, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166869374656, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166920359832, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486166994302416, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486167198437913, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486167204646772, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486167491780600, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_SettingsGUIToggle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486167763105149, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299486167970860396, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
+      propertyPath: m_Data.m_DampPosition
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8578610201198197901, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
       propertyPath: m_RootOrder
       value: 1
