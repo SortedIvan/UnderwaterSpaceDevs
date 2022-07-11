@@ -31,7 +31,10 @@ public class thermal_script : MonoBehaviour
         if (skinRenderer) skinRenderer.sharedMaterial = materialInstance;
         if (meshRenderer) meshRenderer.sharedMaterial = materialInstance;
 
-        transformCam = GameObject.Find("Main Camera").GetComponent<Transform>();
+        if (GameObject.Find("Main Camera") != null)
+        {
+            transformCam = GameObject.Find("Main Camera").GetComponent<Transform>();
+        }
     }
 
     // Update is called once per frame
