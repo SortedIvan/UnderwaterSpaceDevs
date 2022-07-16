@@ -903,6 +903,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &361809096
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m_fish_thermal instance
+  m_Shader: {fileID: -6465566751694194690, guid: e22fb386c7cd7d64581f3bfca96f5d0c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_1:
+        m_Texture: {fileID: 2800000, guid: c27e489bb929b6f4fbe466441324a7e4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_2:
+        m_Texture: {fileID: 2800000, guid: e8adfaf81815f1e42bf9bd22fde14a8f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6f45c6519f3a4f6eb08d647d130e2695:
+        m_Texture: {fileID: 2800000, guid: d0ce2680eabce624badf9e9d4626872d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DB342F0C:
+        m_Texture: {fileID: 2800000, guid: 219b098fdc158b84fa40dcc962e84fa2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_ef2227d6e9294859893aa51ae9b97adc:
+        m_Texture: {fileID: 2800000, guid: dc3709827813ef242ab0f3640fb5483c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1: 0.2
+    - Vector1_2: 1
+    - Vector1_3: 6
+    - Vector1_4: 0.05
+    - Vector1_5: 1
+    - Vector1_587da74897b047c9b5612d36beff813a: 1
+    - Vector1_6: 0.75
+    - Vector1_91f0753e888d4a2f87d560aa41b71820: 0
+    - Vector1_991c6cb77cfb49e8b8829c96e019edcc: 76.28
+    - Vector1_f27b3ffc95764af183778e7ef24ada76: -13.6
+    - Vector1_f27b3ffc95764af183778e7ef24ada76_1: 162.9
+    - _Distance: 0
+    m_Colors:
+    - Color_fb1a077bcafb4cfca5091f4b60c8faf9: {r: 0.03906226, g: 1, b: 0, a: 0}
+    - _L1_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 0}
+    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L3_color: {r: 0, g: 0, b: 0, a: 0}
+    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L4_color: {r: 0, g: 0, b: 0, a: 0}
+    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L5_color: {r: 0, g: 0, b: 0, a: 0}
+    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _L6_color: {r: 0, g: 0, b: 0, a: 0}
+    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &389600502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,7 +1192,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!21 &505784145
+--- !u!21 &447419957
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -3304,7 +3383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165065743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.24, y: 0.541, z: 0.261}
+  m_LocalPosition: {x: 0.33, y: 0.869, z: 0.261}
   m_LocalScale: {x: 0.18993132, y: 0.38925248, z: 0.22775163}
   m_Children:
   - {fileID: 703548763}
@@ -3529,11 +3608,11 @@ PrefabInstance:
     - target: {fileID: 7988363693775796357, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2035483645}
+      objectReference: {fileID: 361809096}
     - target: {fileID: 7988363695257168094, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 505784145}
+      objectReference: {fileID: 447419957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2341f36ba6d585f40b751c77f9ae1cc1, type: 3}
 --- !u!1 &1414837795
@@ -4676,85 +4755,6 @@ Transform:
   m_Father: {fileID: 1165065749}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2035483645
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: m_fish_thermal instance
-  m_Shader: {fileID: -6465566751694194690, guid: e22fb386c7cd7d64581f3bfca96f5d0c, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_1:
-        m_Texture: {fileID: 2800000, guid: c27e489bb929b6f4fbe466441324a7e4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_2:
-        m_Texture: {fileID: 2800000, guid: e8adfaf81815f1e42bf9bd22fde14a8f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_6f45c6519f3a4f6eb08d647d130e2695:
-        m_Texture: {fileID: 2800000, guid: d0ce2680eabce624badf9e9d4626872d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_DB342F0C:
-        m_Texture: {fileID: 2800000, guid: 219b098fdc158b84fa40dcc962e84fa2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_ef2227d6e9294859893aa51ae9b97adc:
-        m_Texture: {fileID: 2800000, guid: dc3709827813ef242ab0f3640fb5483c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_1: 0.2
-    - Vector1_2: 1
-    - Vector1_3: 6
-    - Vector1_4: 0.05
-    - Vector1_5: 1
-    - Vector1_587da74897b047c9b5612d36beff813a: 1
-    - Vector1_6: 0.75
-    - Vector1_91f0753e888d4a2f87d560aa41b71820: 0
-    - Vector1_991c6cb77cfb49e8b8829c96e019edcc: 76.28
-    - Vector1_f27b3ffc95764af183778e7ef24ada76: -13.6
-    - Vector1_f27b3ffc95764af183778e7ef24ada76_1: 162.9
-    - _Distance: 0
-    m_Colors:
-    - Color_fb1a077bcafb4cfca5091f4b60c8faf9: {r: 0.03906226, g: 1, b: 0, a: 0}
-    - _L1_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_color: {r: 0, g: 0, b: 0, a: 0}
-    - _L2_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_color: {r: 0, g: 0, b: 0, a: 0}
-    - _L3_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_color: {r: 0, g: 0, b: 0, a: 0}
-    - _L4_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_color: {r: 0, g: 0, b: 0, a: 0}
-    - _L5_dir: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_color: {r: 0, g: 0, b: 0, a: 0}
-    - _L6_dir: {r: 0, g: 0, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &2130272121
 GameObject:
   m_ObjectHideFlags: 0

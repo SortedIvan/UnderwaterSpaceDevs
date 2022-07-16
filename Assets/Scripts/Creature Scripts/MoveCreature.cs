@@ -7,12 +7,39 @@ public class MoveCreature : MonoBehaviour
     [SerializeField] Transform[] Positions;
     [SerializeField] float objectSpeed;
     [SerializeField] List<string> objectsThatScareFish;
+    [SerializeField] public GameObject fishEyes;
+    [SerializeField] public GameObject fishBody;
 
+    [SerializeField] public Material fishEyeM;
+    [SerializeField] public Material fishBodyM;
+
+    private float speedWhenScared = 3f;
+    private float normalSpeed = 1f;
+
+    private bool fishIsScared = false;
+    private float timeLeft;
     int nextPosIndex;
     Transform nextPos;
+
+    Material fishEyesInstance;
+    Material fishBodyInstance;
+
+    private SkinnedMeshRenderer skinRendererEyes;
+    private SkinnedMeshRenderer skinRenderedBody;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        fishEyesInstance = new Material(fishEyeM);
+        fishBodyInstance = new Material(fishBodyM);
+
+        skinRendererEyes = fishEyes.GetComponent<SkinnedMeshRenderer>();
+        skinRenderedBody = fishBody.GetComponent<SkinnedMeshRenderer>();
+
+        skinRendererEyes.sharedMaterial = fishEyesInstance;
+        skinRenderedBody.sharedMaterial = fishBodyInstance;
+
         nextPos = GetRandomPosition();
     }
 
@@ -20,6 +47,11 @@ public class MoveCreature : MonoBehaviour
     void Update()
     {
         MoveGameObject();
+
+        if (fishIsScared)
+        {
+            ScareFish();
+        }
     }
 
     private Transform GetRandomPosition()
@@ -36,9 +68,18 @@ public class MoveCreature : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, nextPos.position, objectSpeed * Time.deltaTime);
             transform.rotation = Quaternion.LookRotation(nextPos.position - transform.position, transform.up);
+
         }
     }
 
+    private void ScareFish()
+    {
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0)
+        {
+            SetFishSettings(false);
+        }
+    }
 
     private Transform FindFurthestObject()
     {
@@ -64,7 +105,35 @@ public class MoveCreature : MonoBehaviour
             {
                 //transform.position = nextPos.position;
                 nextPos = FindFurthestObject();
+                SetFishSettings(true);
             }
         }
     }
+
+    private void SetFishSettings(bool isScared)
+    {
+        if (isScared)
+        {
+            fishIsScared = true;
+            timeLeft = 3f;
+            objectSpeed = speedWhenScared;
+            fishEyesInstance.SetFloat("WaveSpeed", 6);
+            fishBodyInstance.SetFloat("WaveSpeed", 6);
+            fishEyesInstance.SetFloat("Amplitude", 16);
+            fishBodyInstance.SetFloat("Amplitude", 16);
+            
+
+        }
+        else
+        {
+            fishIsScared = false;
+            objectSpeed = normalSpeed;
+            fishEyesInstance.SetFloat("WaveSpeed", 3);
+            fishBodyInstance.SetFloat("WaveSpeed", 3);
+            fishEyesInstance.SetFloat("Amplitude", 12);
+            fishBodyInstance.SetFloat("Amplitude", 12);
+        }
+    }
+
+    
 }

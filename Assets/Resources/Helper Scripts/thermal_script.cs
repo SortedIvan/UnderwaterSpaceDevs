@@ -37,7 +37,6 @@ public class thermal_script : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Controls != null && Controls.GetComponent<test_controls>().Thermal_Cam)
