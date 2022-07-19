@@ -64,7 +64,7 @@ Material:
     - Vector1_f27b3ffc95764af183778e7ef24ada76_1: 162.9
     - WaveSpeed: 1
     m_Colors:
-    - Color_390e0e14b58f4064ae86a4b02b8b26bf: {r: 0.05660379, g: 0, b: 0, a: 0}
+    - Color_390e0e14b58f4064ae86a4b02b8b26bf: {r: 0.2784314, g: 0, b: 0, a: 0}
     - Color_fb1a077bcafb4cfca5091f4b60c8faf9: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_535ae6d2eb794bd29f72a9dea5ce9da0: {r: 0.91, g: 0.86, b: 0, a: 0}
     - _L1_color: {r: 0, g: 0, b: 0, a: 1}
